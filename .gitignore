@@ -1,0 +1,10 @@
+### In future commits, the ignores below will be activated.
+
+## Ignore unminified CSS code in the tests
+# tests/assets/css/*
+# !tests/assets/css/custom.css
+# !tests/assets/css/epoir.css
+# !tests/assets/css/epoir.css.map
+
+## Ignore unminified Javascript file
+# tests/assets/js/epoir.js

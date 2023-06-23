@@ -1,0 +1,44 @@
+.e-alert {
+    --bg-color: #{rgba($gray, .8)};
+    --border-color: #{rgba($gray, .4)};
+    --text-color: #fff;
+
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+
+    //Different alert themes
+    &.primary {
+        --bg-color: #{rgba($gold, .8)};
+        --border-color: #{rgba($gold, .4)};
+        --text-color: #000;
+    }
+    &.success {
+        --bg-color: #{rgba($medium-green, .8)};
+        --border-color: #{rgba($green, .4)};
+    }
+    &.failure {
+        --bg-color: #{rgba($red, .8)};
+        --border-color: #{rgba($red, .4)};
+    }
+    &.info {
+        --bg-color: #{rgba($blue, .8)};
+        --border-color: #{rgba($blue, .4)};
+    }
+    &.warning {
+        --bg-color: #{rgba($yellow, .8)};
+        --border-color: #{rgba($yellow, .4)};
+        --text-color: #000;
+    }
+
+    //Only border, without background color
+    &.only-border {
+        background-color: transparent;
+        --text-color: var(--bg-color);
+        --border-color: var(--bg-color);
+    }
+
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}

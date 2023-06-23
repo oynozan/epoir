@@ -1,0 +1,28 @@
+//General
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+
+/* The general element stylings are as minimal as possible in order to prevent 
+ * any possible confusion with custom CSS code and the library.
+ * Since the library code is supposed to be imported before custom CSS codes,
+ * there shouldn't be any fuss in any case.
+ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+//Components
+@import 'components/buttons';
+@import 'components/alerts';
+
+//Styling classes
+@import 'styles/background';
+@import 'styles/color';

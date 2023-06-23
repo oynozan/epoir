@@ -1,0 +1,193 @@
+//Button styling
+.e-btn {
+    @mixin color-styling {
+        //Background and colors
+        background-color: var(--btn-bg);
+        color: var(--btn-color);
+        border: var(--btn-border);
+
+        &:hover { background-color: var(--btn-hover-bg); }
+        &:focus {
+            background-color: var(--btn-focus-bg);
+            outline: var(--btn-outline-color) solid 3px;
+        }
+        &:active { background-color: var(--btn-active-bg); }
+    }
+
+    --btn-bg: #{$gray};
+    --btn-hover-bg: #{$dark-gray};
+    --btn-focus-bg: #{$darker-gray};
+    --btn-active-bg: #{$darkest-gray};
+    --btn-color: #fff;
+    --btn-border: none;
+    --btn-outline-color: rgba(0, 0, 0, 0.14);
+
+    font-family: "Noto Sans";
+    width: fit-content;
+    padding: 7px 23px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    outline: transparent solid 0;
+    transition: 
+        background-color 200ms ease-in-out,
+        color 200ms ease-in-out,
+        outline 100ms ease-in-out;
+    cursor: pointer;
+    @include box-shadow(0px, 0px, 19px, 0px, rgba(0,0,0,0.12));
+
+    //Different button themes
+    &.primary {
+        --btn-bg: #{$yellow};
+        --btn-hover-bg: #{$gold};
+        --btn-focus-bg: #{$orange};
+        --btn-active-bg: #{$dark-orange};
+        --btn-color: #{$night};
+        --btn-outline-color: #{$light-yellow}90;
+    }
+    &.dark {
+        --btn-bg: #{$dark};
+        --btn-hover-bg: #{$night};
+        --btn-focus-bg: #{$night};
+        --btn-active-bg: #{$night};
+        --btn-color: #fff;
+        --btn-outline-color: #{$gray}90;
+
+        &-blue {
+            --btn-bg: #{$darker-blue};
+            --btn-hover-bg: #{$navy-blue};
+            --btn-focus-bg: #{$darkest-blue};
+            --btn-active-bg: #{$darkest-blue};
+            --btn-color: #fff;
+            --btn-outline-color: #{$dark-blue}70;
+        }
+        &-green {
+            --btn-bg: #{$dark-green};
+            --btn-hover-bg: #{$darker-green};
+            --btn-focus-bg: #{$darkest-green};
+            --btn-active-bg: #{$darkest-green};
+            --btn-color: #fff;
+            --btn-outline-color: #{$dark-green}70;
+        }
+    }
+    &.light {
+        --btn-bg: #{$light};
+        --btn-hover-bg: #{$dark-light};
+        --btn-focus-bg: #{$darker-light};
+        --btn-active-bg: #{$darkest-light};
+        --btn-color: #000;
+        --btn-outline-color: #{$light}50;
+
+        &-blue {
+            --btn-bg: #{$light-blue};
+            --btn-hover-bg: #{$dark-light-blue};
+            --btn-focus-bg: #{$darker-light-blue};
+            --btn-active-bg: #{$darkest-light-blue};
+            --btn-color: #fff;
+            --btn-outline-color: #{$lighter-blue}70;
+        }
+        &-green {
+            --btn-bg: #{$light-green};
+            --btn-hover-bg: #{$dark-light-green};
+            --btn-focus-bg: #{$darker-light-green};
+            --btn-active-bg: #{$darkest-light-green};
+            --btn-color: #fff;
+            --btn-outline-color: #{$lighter-green}70;
+        }
+    }
+    &.transparent {
+        --btn-bg: transparent;
+        --btn-hover-bg: #{$light};
+        --btn-focus-bg: #{$light};
+        --btn-active-bg: #{$light};
+        --btn-color: #000;
+        --btn-outline-color: transparent;
+        @include no-box-shadow;
+    }
+
+    //Main Colors
+    &.blue {
+        --btn-bg: #{$blue};
+        --btn-hover-bg: #{$dark-blue};
+        --btn-focus-bg: #{$medium-blue};
+        --btn-active-bg: #{$darker-blue};
+        --btn-color: #fff;
+        --btn-outline-color: #{$dark-blue}80;
+    }
+    &.green {
+        --btn-bg: #{$green};
+        --btn-hover-bg: #{$medium-green};
+        --btn-focus-bg: #{$dark-green};
+        --btn-active-bg: #{$darker-green};
+        --btn-color: #fff;
+        --btn-outline-color: #{$dark-green}80;
+    }
+    &.red {
+        --btn-bg: #{$red};
+        --btn-hover-bg: #{$medium-red};
+        --btn-focus-bg: #{$dark-red};
+        --btn-active-bg: #{$darker-red};
+        --btn-color: #fff;
+        --btn-outline-color: #{$red}60;
+    }
+    &.pink {
+        --btn-bg: #{$pink};
+        --btn-hover-bg: #{$medium-pink};
+        --btn-focus-bg: #{$dark-pink};
+        --btn-active-bg: #{$darker-pink};
+        --btn-color: #fff;
+        --btn-outline-color: #{$pink}80;
+    }
+    &.purple {
+        --btn-bg: #{$purple};
+        --btn-hover-bg: #{$medium-purple};
+        --btn-focus-bg: #{$dark-purple};
+        --btn-active-bg: #{$darker-purple};
+        --btn-color: #fff;
+        --btn-outline-color: #{$purple}80;
+    }
+
+    //Different stylings
+    &.only-border {
+        --btn-border: 2px solid var(--btn-bg);
+        @include no-box-shadow;
+
+        //Make background transparent for all button states
+        &, &:hover, &:active, &:focus {
+            background-color: transparent;
+        }
+
+        &:hover { --btn-border: 2px solid var(--btn-hover-bg); }
+        &:focus { --btn-border: 2px solid var(--btn-focus-bg); }
+        &:active { --btn-border: 2px solid var(--btn-active-bg); }
+
+        //Make background filled with color for this specific class
+        &.effects {
+            color: var(--btn-bg);
+            
+            &:hover {
+                background-color: var(--btn-hover-bg);
+                color: var(--btn-color);
+            }
+            &:focus {
+                background-color: var(--btn-focus-bg);
+                color: var(--btn-color);
+            }
+            &:active {
+                background-color: var(--btn-active-bg);
+                color: var(--btn-color);
+            }
+        }
+
+        &:not(.effects) {
+            --btn-color: var(--btn-bg);
+        }
+    }
+
+    &.no-outline {
+        --btn-outline-color: transparent;
+    }
+    
+    @include colors("btn-color"); // <-- Custom text colors
+    @include color-styling; // <-- Background, colors, border etc.
+}

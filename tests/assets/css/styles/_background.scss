@@ -1,0 +1,59 @@
+//General background color declarations
+
+/*
+ * $backgrounds:
+ *   "background class", "background color", "text color"
+ */
+$backgrounds: 
+    'dark' $dark #fff,
+    'light' $light #000,
+    'white' #fff #000,
+    'black' #000 #fff,
+    'blue' $blue #fff,
+    'green' $green #fff,
+;
+
+.bg {
+    /* Three different loops has been used for three different states.
+     * The purpose of loops is improving code readability.
+     */
+    &-hover {
+        @each $bg, $bg-color, $color in $backgrounds {
+            &-#{$bg} {
+                &:hover {
+                    background-color: $bg-color;
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    &-focus {
+        @each $bg, $bg-color, $color in $backgrounds {
+            &-#{$bg} {
+                &:focus {
+                    background-color: $bg-color;
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    &-active {
+        @each $bg, $bg-color, $color in $backgrounds {
+            &-#{$bg} {
+                &:active {
+                    background-color: $bg-color;
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    @each $bg, $bg-color, $color in $backgrounds {
+        &-#{$bg} {
+            background-color: $bg-color;
+            color: $color;
+        }
+    }
+}

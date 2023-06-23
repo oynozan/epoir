@@ -1,0 +1,28 @@
+{
+  "name": "epoir",
+  "version": "1.0.0",
+  "description": "Most reliable frontend library to create projects with HTML, CSS, and Javascript",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oynozan/epoir.git"
+  },
+  "keywords": [
+    "frontend",
+    "library",
+    "html",
+    "css"
+  ],
+  "author": "oynozan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oynozan/epoir/issues"
+  },
+  "homepage": "https://github.com/oynozan/epoir#readme"
+}

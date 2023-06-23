@@ -1,0 +1,95 @@
+//Box Shadow
+@mixin box-shadow($i, $j, $k, $l, $color) {
+    -webkit-box-shadow: inset $i $j $k $l $color;
+    -moz-box-shadow: inset $i $j $k $l $color;
+    box-shadow: inset $i $j $k $l $color;
+}
+@mixin no-box-shadow {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+//Drag
+@mixin no-drag {
+    
+}
+
+//Colors
+//TODO: Create colors with for-loop
+@mixin colors($var: false, $top-level: true) {
+    @if $top-level {
+        @if $var {
+            &.color {
+                &-light {
+                    --#{$var}: #{$light};
+                    &-blue { --#{$var}: #{$light-blue}; }
+                    &-green { --#{$var}: #{$light-green}; }
+                }
+                &-dark {
+                    --#{$var}: #{$dark};
+                    &-blue { --#{$var}: #{$darker-blue}; }
+                    &-green { --#{$var}: #{$dark-green};}
+                }
+                &-black { --#{$var}: #000; }
+                &-white { --#{$var}: #fff; }
+                &-yellow { --#{$var}: #{$yellow}; }
+                &-gold { --#{$var}: #{$gold}; }
+                &-orange { --#{$var}: #{$orange}; }
+                &-blue { --#{$var}: #{$blue}; }
+                &-green { --#{$var}: #{$green}; }
+                &-red { --#{$var}: #{$red}; }
+                &-pink { --#{$var}: #{$pink}; }
+                &-purple { --#{$var}: #{$purple}; }
+            }
+        }
+        @else {
+            &.color {
+                &-light {
+                    color: #{$light};
+                    &-blue { color: #{$light-blue}; }
+                    &-green { color: #{$light-green}; }
+                }
+                &-dark {
+                    color: #{$dark};
+                    &-blue { color: #{$darker-blue}; }
+                    &-green { color: #{$dark-green};}
+                }
+                &-black { color: #000; }
+                &-white { color: #fff; }
+                &-yellow { color: #{$yellow}; }
+                &-gold { color: #{$gold}; }
+                &-orange { color: #{$orange}; }
+                &-blue { color: #{$blue}; }
+                &-green { color: #{$green}; }
+                &-red { color: #{$red}; }
+                &-pink { color: #{$pink}; }
+                &-purple { color: #{$purple}; }
+            }
+        }
+    }
+    @else {
+        .color {
+            &-light {
+                color: #{$light};
+                &-blue { color: #{$light-blue}; }
+                &-green { color: #{$light-green}; }
+            }
+            &-dark {
+                color: #{$dark};
+                &-blue { color: #{$darker-blue}; }
+                &-green { color: #{$dark-green};}
+            }
+            &-black { color: #000; }
+            &-white { color: #fff; }
+            &-yellow { color: #{$yellow}; }
+            &-gold { color: #{$gold}; }
+            &-orange { color: #{$orange}; }
+            &-blue { color: #{$blue}; }
+            &-green { color: #{$green}; }
+            &-red { color: #{$red}; }
+            &-pink { color: #{$pink}; }
+            &-purple { color: #{$purple}; }
+        }
+    }
+}
